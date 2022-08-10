@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using EmployeeSalary.Api.Models.Employee;
 using EmployeeSalary.Api.Models.Entities;
 using EmployeeSalary.Api.Models.Shards;
 using EmployeeSalary.Api.V1.DTOs;
