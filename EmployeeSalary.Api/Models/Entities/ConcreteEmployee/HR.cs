@@ -1,5 +1,5 @@
 ﻿
-namespace EmployeeSalary.Api.Models.Employee.ConcreteEmployee
+namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee
 {
     public class HR : HasLeaderEmployee<Manager>
     {
@@ -9,7 +9,7 @@ namespace EmployeeSalary.Api.Models.Employee.ConcreteEmployee
         {
         }
 
-        public HR(string name, int workingHours, double ratingHour, Manager manager) : base(name, workingHours,
+        public HR(int id,string name, int workingHours, double ratingHour, Manager manager) : base(id,name, workingHours,
             ratingHour, manager)
         {
         }

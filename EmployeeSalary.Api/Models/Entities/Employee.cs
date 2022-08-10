@@ -1,8 +1,10 @@
-﻿namespace EmployeeSalary.Api.Models.Employee;
+﻿namespace EmployeeSalary.Api.Models.Entities;
 
 public abstract class Employee
 {
     #region Properties
+
+    public int Id { get; set; }      
     public string Name { get; set; }
     public int WorkingHours { get; set; }
     public double RatingHour { get; set; }
@@ -15,8 +17,9 @@ public abstract class Employee
     {
     }
 
-    protected Employee(string name, int workingHours, double ratingHour)
+    protected Employee(int id, string name, int workingHours, double ratingHour)
     {
+        Id = id;
         Name = name;
         WorkingHours = workingHours;
         RatingHour = ratingHour;

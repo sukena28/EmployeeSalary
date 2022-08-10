@@ -1,4 +1,4 @@
-using EmployeeSalary.Api.Models.Employee.ConcreteEmployee;
+using EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
 using EmployeeSalary.Api.V1.DTOs;
 using EmployeeSalary.Api.V1.Services;
 using Microsoft.AspNetCore.Mvc;

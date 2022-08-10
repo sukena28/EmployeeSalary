@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
 
-namespace EmployeeSalary.Api.Models.Employee.ConcreteEmployee;
-
-public class Manager : Employee
+public class Manager : Entities.Employee
 {
     #region properties
     public double Bonus { get; set; }
@@ -15,7 +13,7 @@ public class Manager : Employee
     {
     }
 
-    public Manager(string name, int workingHours, double ratingHour, double bonus) : base(name, workingHours,
+    public Manager(int id,string name, int workingHours, double ratingHour, double bonus) : base(id, name, workingHours,
         ratingHour)
     {
         Bonus = bonus;

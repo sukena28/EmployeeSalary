@@ -1,4 +1,5 @@
 ﻿using EmployeeSalary.Api.Models.Employee;
+using EmployeeSalary.Api.Models.Entities;
 using EmployeeSalary.Api.V1.DTOs;
 
 namespace EmployeeSalary.Api.V1.Services

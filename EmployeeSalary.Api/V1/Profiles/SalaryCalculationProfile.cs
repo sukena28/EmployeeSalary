@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using EmployeeSalary.Api.Models.Employee;
-using EmployeeSalary.Api.Models.Employee.ConcreteEmployee;
+using EmployeeSalary.Api.Models.Entities;
+using EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
 using EmployeeSalary.Api.V1.DTOs;
 
 namespace EmployeeSalary.Api.V1.Profiles

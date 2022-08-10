@@ -1,4 +1,4 @@
-﻿namespace EmployeeSalary.Api.Models.Employee.ConcreteEmployee;
+﻿namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
 
 public class Sales : HasLeaderEmployee<Manager>
 {
@@ -15,8 +15,8 @@ public class Sales : HasLeaderEmployee<Manager>
     {
     }
 
-    public Sales(string name, int workingHours, double ratingHour, double commission, double plannedTarget,
-        double currentTarget, Manager manger) : base(name, workingHours, ratingHour, manger)
+    public Sales(int id,string name, int workingHours, double ratingHour, double commission, double plannedTarget,
+        double currentTarget, Manager manger) : base(id,name, workingHours, ratingHour, manger)
     {
         Commission = commission;
         PlannedTarget = plannedTarget;

@@ -2,7 +2,7 @@
 
 namespace EmployeeSalary.Api.V1.Extensions
 {
-    public static class ConfigureServicesRegisteration
+    public static class ConfigureServicesRegistration
     {
         public static void AddServices(this IServiceCollection services)
         {
