@@ -17,8 +17,8 @@ public class EmployeeController : ControllerBase
         _employeeService = employeeService;
     }
 
-    [HttpPost]
-    [Route("salary/calculation/{id}")]
+    [HttpGet]
+    [Route("salary/calculation/{id?}")]
     public IActionResult Calculate(int id)
     {
         var employee = EmployeeData.GetById(id);
