@@ -1,34 +1,20 @@
-﻿namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
+﻿using EmployeeSalary.Api.V1.DTOs;
 
-public class Manager : Entities.Employee
+namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
+
+public class Manager : Employee
 {
-    #region properties
     public double Bonus { get; set; }
 
-    #endregion
-
-    #region Constructor
-
-    public Manager()
-    {
-    }
-
-    public Manager(int id,string name, int workingHours, double ratingHour, double bonus) : base(id, name, workingHours,
-        ratingHour)
+    public Manager() {  }
+    public Manager(int id,string name, double salary, double bonus) : base(id, name, salary)
     {
         Bonus = bonus;
     }
-
-    #endregion
-
-    #region Methods
-
     public override double CalculateSalary()
     {
         var baseSalary = base.CalculateSalary();
 
         return baseSalary + Bonus;
     }
-
-    #endregion
 }

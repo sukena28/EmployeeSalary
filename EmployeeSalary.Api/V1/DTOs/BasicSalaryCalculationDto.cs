@@ -2,18 +2,15 @@
 
 namespace EmployeeSalary.Api.V1.DTOs
 {
-    public class BasicSalaryCalculationDto
+    public interface ISalaryCalculationDto
     {
-        [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "Value for {0} must be greater than or equal {1}")]
-        public int Id { get; set; }
+        int Salary { get; set; }
+    }
+    public class BasicSalaryCalculationDto : ISalaryCalculationDto
+    {
 
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Value for {0} must be greater than or equal {1}")]
-        public int WorkingHours { get; set; }
-
-        [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "Value for {0} must be greater than or equal {1}")]
-        public double RatingHour { get; set; }
+        public int Salary { get; set; }
     }
 }

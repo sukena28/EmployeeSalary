@@ -1,15 +1,19 @@
-﻿using System.Net;
+﻿using EmployeeSalary.Api.Models.Shards;
+using MainProject.Common.Extensions;
+using System.Net;
 using System.Text.Json;
-using EmployeeSalary.Api.Models.Shards;
+using ILogger = Serilog.ILogger;
 
 namespace EmployeeSalary.Api.Common.Middlewares
 {
     public class ErrorHandlerMiddleware
     {
+        private readonly ILogger _logger;
         private readonly RequestDelegate _next;
 
-        public ErrorHandlerMiddleware(RequestDelegate next)
+        public ErrorHandlerMiddleware(ILogger logger, RequestDelegate next)
         {
+            _logger = logger;
             _next = next;
         }
 
@@ -19,12 +23,14 @@ namespace EmployeeSalary.Api.Common.Middlewares
             {
                 await _next(context);
             }
-            catch (Exception error)
+            catch (Exception exception)
             {
+                _logger.LogException(context, exception);
+
                 var response = context.Response;
                 response.ContentType = "application/json";
 
-                switch (error)
+                switch (exception)
                 {
                     case AppException e:
                         // custom application error
@@ -40,7 +46,7 @@ namespace EmployeeSalary.Api.Common.Middlewares
                         break;
                 }
 
-                var result = JsonSerializer.Serialize(new { message = error?.Message });
+                var result = JsonSerializer.Serialize(new { message = exception?.Message });
                 await response.WriteAsync(result);
             }
         }

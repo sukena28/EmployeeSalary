@@ -1,40 +1,24 @@
-﻿namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
+﻿using EmployeeSalary.Api.V1.DTOs;
+
+namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
 
 public class Sales : HasLeaderEmployee<Manager>
 {
-    #region properties
     public double Commission { get; set; }
-    public double PlannedTarget { get; set; }
-    public double CurrentTarget { get; set; }
+    public double Target { get; set; }
 
-    #endregion
-
-    #region Constructor
-
-    public Sales()
-    {
-    }
-
-    public Sales(int id,string name, int workingHours, double ratingHour, double commission, double plannedTarget,
-        double currentTarget, Manager manger) : base(id,name, workingHours, ratingHour, manger)
+    public Sales() { }
+    public Sales(int id, string name, double salary, double commission, double target,Manager manger) : base(id, name,salary, manger)
     {
         Commission = commission;
-        PlannedTarget = plannedTarget;
-        CurrentTarget = currentTarget;
+        Target = target;
     }
-
-    #endregion
-
-    #region Methods
-
     public override double CalculateSalary()
     {
         var baseSalary = base.CalculateSalary();
 
-        if (CurrentTarget > 0 && CurrentTarget >= PlannedTarget) return baseSalary;
+        if (Target > 0 && Target >= 1000) return baseSalary;
 
-        return baseSalary + Commission * CurrentTarget;
+        return baseSalary + (Commission * Target);
     }
-
-    #endregion
 }

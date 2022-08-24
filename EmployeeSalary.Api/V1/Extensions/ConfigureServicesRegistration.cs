@@ -6,7 +6,7 @@ namespace EmployeeSalary.Api.V1.Extensions
     {
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddScoped<ISalaryCalculationService, SalaryCalculationService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
         }
     }
 }

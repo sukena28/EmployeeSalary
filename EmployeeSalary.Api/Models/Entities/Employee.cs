@@ -2,37 +2,25 @@
 
 public abstract class Employee
 {
-    #region Properties
 
     public int Id { get; set; }      
     public string Name { get; set; }
-    public int WorkingHours { get; set; }
-    public double RatingHour { get; set; }
-
-    #endregion
-
-    #region Constructor
+    public double Salary { get; set; }
 
     protected Employee()
     {
     }
 
-    protected Employee(int id, string name, int workingHours, double ratingHour)
+    protected Employee(int id, string name, double salary)
     {
         Id = id;
         Name = name;
-        WorkingHours = workingHours;
-        RatingHour = ratingHour;
+        Salary = salary;
     }
-
-    #endregion
-
-    #region Methods
 
     public virtual double CalculateSalary()
     {
-        return RatingHour * WorkingHours;
+        return Salary;
     }
 
-    #endregion
 }

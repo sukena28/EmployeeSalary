@@ -10,10 +10,6 @@ namespace EmployeeSalary.Api.V1.DTOs
 
         [Required]
         [Range(1, double.MaxValue, ErrorMessage = "{0} should be greater than or equal {1}")]
-        public double PlannedTarget { get; set; }
-
-        [Required]
-        [Range(0, double.MaxValue, ErrorMessage = "{0} should be greater than or equal {1}")]
-        public double CurrentTarget { get; set; }
+        public double Target { get; set; }
     }
 }
