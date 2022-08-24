@@ -1,6 +1,4 @@
-﻿using EmployeeSalary.Api.V1.DTOs;
-
-namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
+﻿namespace EmployeeSalary.Api.Models.Entities.ConcreteEmployee;
 
 public class Manager : Employee
 {
